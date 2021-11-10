@@ -1,0 +1,250 @@
+{
+  "repositories": [
+    {
+      "id": 1,
+      "name": "emmethub_projects_rest_api",
+      "description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.",
+      "url": "https://github.com/kimanicharles911/emmethub_projects_rest_api",
+      "website_url": "N/A",
+      "topics": ["express", "rest-api"],
+      "branches":["master"],
+      "commits": 1,
+      "has_license": true,
+      "has_readme": true
+    },
+    {
+      "id": 2,
+      "name": "emmethub_basic_rest_api",
+      "description": "This is a repository that holds a basic Expressjs rest-api. In it's simplicity it demonstrates the use of some http methods i.e GET, POST, PUT, DELETE. It is not commented however, to understand it you can read the PDF in this repository.",
+      "url": "https://github.com/kimanicharles911/emmethub_basic_rest_api",
+      "website_url": "N/A",
+      "topics": ["express", "rest-api"],
+      "branches":["master"],
+      "commits": 1,
+      "has_license": true,
+      "has_readme": true
+    },
+    {
+      "id": 3,
+      "name": "express_app_w_json_file_plus_html",
+      "description": "This is a basic Expressjs website with a homepage, about, and contact and error page. It utilizes a JSON file to render data in the homepage.",
+      "url": "https://github.com/kimanicharles911/express_app_w_json_file_plus_html",
+      "website_url": "N/A",
+      "topics": ["nodejs","javascript","heroku","express"],
+      "branches":["master"],
+      "commits": 9,
+      "has_license": true,
+      "has_readme": true
+    },
+    {
+      "id": 4,
+      "name": "emmethub_custom_nodejs_modules",
+      "description": "This are nodejs programs that return prime numbers between 1 - 100, returns even numbers between 1 - 50, remove empty spaces in the beginning and end of strings, creates and deletes files and gives an example of a basic nodejs server.",
+      "url": "https://github.com/kimanicharles911/emmethub_custom_nodejs_modules",
+      "website_url": "N/A",
+      "topics": ["nodejs"],
+      "branches":["master"],
+      "commits": 7,
+      "has_license": true,
+      "has_readme": true
+    },
+    {
+      "id": 5,
+      "name": "weather_citywatch",
+      "description": "An applcation that provides weather data of the city/town a user enters. It uses a weather API. It is developed using Reactjs, deployed here 👉 https://weathercitywatch.netlify.app",
+      "url": "https://github.com/kimanicharles911/weather_citywatch",
+      "website_url": "https://weathercitywatch.netlify.app/",
+      "topics": ["react","api","bootstrap","weather","react-testing-library","openweathermapapi"],
+      "branches":["master"],
+      "commits": 6,
+      "has_license": true,
+      "has_readme": true
+    },
+    {
+      "id": 6,
+      "name": "react-app-testing",
+      "description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.",
+      "url": "https://github.com/kimanicharles911/react-app-testing",
+      "website_url": "N/A",
+      "topics": ["react", "jest"],
+      "branches":["master"],
+      "commits": 6,
+      "has_license": true,
+      "has_readme": true
+    },
+    {
+      "id": 7,
+      "name": "testing-a-react-app",
+      "description": "This a repository of create-react-app upon which testing has been conducted using Jest. Check the README description for more details.",
+      "url": "https://github.com/kimanicharles911/testing-a-react-app",
+      "website_url": "N/A",
+      "topics": ["react", "jest"],
+      "branches":["master"],
+      "commits": 4,
+      "has_license": true,
+      "has_readme": true
+    },
+    {
+      "id": 8,
+      "name": "static_weather_citywatch",
+      "description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.",
+      "url": "https://github.com/kimanicharles911/static_weather_citywatch",
+      "website_url": "https://weathercitywatch.netlify.app/",
+      "topics": ["bootstrap"],
+      "branches":["master"],
+      "commits": 2,
+      "has_license": true,
+      "has_readme": true
+    },
+    {
+      "id": 9,
+      "name": "static_minesweeper",
+      "description": "This is the repository that holds the source code of Static Minesweeper. Static Minesweeper holds the UI concept of the game Static minesweeper which will be made using react.",
+      "url": "https://github.com/kimanicharles911/static_minesweeper",
+      "website_url": "https://staticminesweeper.netlify.app/",
+      "topics": ["css", "html", "bootstrap"],
+      "branches":["master"],
+      "commits": 4,
+      "has_license": true,
+      "has_readme": true
+    },
+    {
+      "id": 10,
+      "name": "minesweeper",
+      "description": "This is the repository that holds the source code of My Minesweeper Game. It has been developed using Reactjs and bootstrap 👉 https://gittedminesweeper.netlify.app/",
+      "url": "https://github.com/kimanicharles911/minesweeper",
+      "website_url": "https://gittedminesweeper.netlify.app/",
+      "topics": ["react","bootstrap","minesweeper","react-bootstrap"],
+      "branches":["master"],
+      "commits": 33,
+      "has_license": true,
+      "has_readme": true
+    }
+  ]
+}
+
+
+{
+  repositories: [
+    {
+      id: 1,
+      name: "emmethub_projects_rest_api",
+      description: "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.",
+      url: "https://github.com/kimanicharles911/emmethub_projects_rest_api",
+      website_url: "N/A",
+      topics: ["express", "rest-api"],
+      branches:["master"],
+      commits: 1,
+      has_license: true,
+      has_readme: true
+    },
+    {
+      id: 2,
+      name: "emmethub_basic_rest_api",
+      description: "This is a repository that holds a basic Expressjs rest-api. In it's simplicity it demonstrates the use of some http methods i.e GET, POST, PUT, DELETE. It is not commented however, to understand it you can read the PDF in this repository.",
+      url: "https://github.com/kimanicharles911/emmethub_basic_rest_api",
+      website_url: "N/A",
+      topics: ["express", "rest-api"],
+      branches:["master"],
+      commits: 1,
+      has_license: true,
+      has_readme: true
+    },
+    {
+      id: 3,
+      name: "express_app_w_json_file_plus_html",
+      description: "This is a basic Expressjs website with a homepage, about, and contact and error page. It utilizes a JSON file to render data in the homepage.",
+      url: "https://github.com/kimanicharles911/express_app_w_json_file_plus_html",
+      website_url: "N/A",
+      topics: ["nodejs","javascript","heroku","express"],
+      branches:["master"],
+      commits: 9,
+      has_license: true,
+      has_readme: true
+    },
+    {
+      id: 4,
+      name: "emmethub_custom_nodejs_modules",
+      description: "This are nodejs programs that return prime numbers between 1 - 100, returns even numbers between 1 - 50, remove empty spaces in the beginning and end of strings, creates and deletes files and gives an example of a basic nodejs server.",
+      url: "https://github.com/kimanicharles911/emmethub_custom_nodejs_modules",
+      website_url: "N/A",
+      topics: ["nodejs"],
+      branches:["master"],
+      commits: 7,
+      has_license: true,
+      has_readme: true
+    },
+    {
+      id: 5,
+      name: "weather_citywatch",
+      description: "An applcation that provides weather data of the city/town a user enters. It uses a weather API. It is developed using Reactjs, deployed here 👉 https://weathercitywatch.netlify.app",
+      url: "https://github.com/kimanicharles911/weather_citywatch",
+      website_url: "https://weathercitywatch.netlify.app/",
+      topics: ["react","api","bootstrap","weather","react-testing-library","openweathermapapi"],
+      branches:["master"],
+      commits: 6,
+      has_license: true,
+      has_readme: true
+    },
+    {
+      id: 6,
+      name: "react-app-testing",
+      description: "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.",
+      url: "https://github.com/kimanicharles911/react-app-testing",
+      website_url: "N/A",
+      topics: ["react", "jest"],
+      branches:["master"],
+      commits: 6,
+      has_license: true,
+      has_readme: true
+    },
+    {
+      id: 7,
+      name: "testing-a-react-app",
+      description: "This a repository of create-react-app upon which testing has been conducted using Jest. Check the README description for more details.",
+      url: "https://github.com/kimanicharles911/testing-a-react-app",
+      website_url: "N/A",
+      topics: ["react", "jest"],
+      branches:["master"],
+      commits: 4,
+      has_license: true,
+      has_readme: true
+    },
+    {
+      id: 8,
+      name: "static_weather_citywatch",
+      description: "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.",
+      url: "https://github.com/kimanicharles911/static_weather_citywatch",
+      website_url: "https://weathercitywatch.netlify.app/",
+      topics: ["bootstrap"],
+      branches:["master"],
+      commits: 2,
+      has_license: true,
+      has_readme: true
+    },
+    {
+      id: 9,
+      name: "static_minesweeper",
+      description: "This is the repository that holds the source code of Static Minesweeper. Static Minesweeper holds the UI concept of the game Static minesweeper which will be made using react.",
+      url: "https://github.com/kimanicharles911/static_minesweeper",
+      website_url: "https://staticminesweeper.netlify.app/",
+      topics: ["css", "html", "bootstrap"],
+      branches:["master"],
+      commits: 4,
+      has_license: true,
+      has_readme: true
+    },
+    {
+      id: 10,
+      name: "minesweeper",
+      description: "This is the repository that holds the source code of My Minesweeper Game. It has been developed using Reactjs and bootstrap 👉 https://gittedminesweeper.netlify.app/",
+      url: "https://github.com/kimanicharles911/minesweeper",
+      website_url: "https://gittedminesweeper.netlify.app/",
+      topics: ["react","bootstrap","minesweeper","react-bootstrap"],
+      branches:["master"],
+      commits: 33,
+      has_license: true,
+      has_readme: true
+    }
+  ]
+}
