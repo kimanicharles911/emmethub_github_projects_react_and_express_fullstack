@@ -1,0 +1,6 @@
+/* I use the reset css to clear default browser styles 
+I use the normalize css to apply standardized browser CSS */
+@import-reset;
+@import-normalize;
+/* Fetch the Dancing script and permanent marker font */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Permanent+Marker&display=swap');

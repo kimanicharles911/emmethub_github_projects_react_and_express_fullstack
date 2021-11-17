@@ -9,7 +9,7 @@
   },
   "engines": {
     "node": "14.15.1"
-  },  
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kimanicharles911/emmethub_projects_rest_api.git"

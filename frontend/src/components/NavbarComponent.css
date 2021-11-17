@@ -1,0 +1,57 @@
+a{
+  font-family: 'Dancing Script', cursive;
+}
+#brand-id{
+  font-family: 'Permanent Marker', cursive;
+  color: #fff;
+}
+.navbar-brand:hover{
+  color: #fff;
+}
+.nav-class{
+  background-color: #103464;
+}
+#navbar-toggler{
+  color: #fff;
+  border-color: #fff;
+}
+#navbar-toggler > span{
+  color: #fff;
+  background-image: url("../images/nav-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+.card{
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(16, 52, 100, 1);
+  /* width: 400px; */
+}
+
+#nav-link-class{
+  color: #fff;
+}
+/* .buttons{
+  display: flex;
+  position: absolute;
+  right: 1rem;
+  top: 4.5rem;
+} */
+i{
+  color: #6084f1;
+  width: 30px;
+  text-align: right;
+  font-size: 14px;
+}
+.fa-plus, .fa-github{
+  color: #fff;
+}
+#view-modal-header{
+  border-bottom: 0px;
+}
+#edit-modal-header{
+  border-bottom: 0px;
+}
+.set-inline{
+  display: inline;
+}
