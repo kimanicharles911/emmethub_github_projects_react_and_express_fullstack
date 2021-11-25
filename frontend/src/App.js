@@ -1,11 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
-import { NavbarComponent } from './components';
+import {NavbarComponent, MainComponent} from './components';
 
 const App = () => {
+
   return (
     <>
       <NavbarComponent/>
+      <MainComponent/>
     </>
   );
 }

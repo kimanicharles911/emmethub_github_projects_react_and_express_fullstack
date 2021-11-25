@@ -8,9 +8,13 @@ import {useState} from 'react';
 
 const NavbarComponent = () => {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const [projectNameVal, setProjectNameVal] = useState("");
+
+  console.log(`😜`, projectNameVal);
+
   return (
     <>
       <Navbar className="nav-class" expand="sm">
@@ -24,7 +28,7 @@ const NavbarComponent = () => {
                   <ul className="navbar-nav me-auto mb-2 mb-sm-0">           
                   </ul>
                   <ul className="d-flex navbar-nav me-2 mb-2 mb-sm-0">
-                    <Nav.Link href="#" id="nav-link-class" onClick={handleShow}><FontAwesomeIcon icon={faPlus} />&nbsp;Create Project</Nav.Link>
+                    <Nav.Link href="#" id="nav-link-class" onClick={handleShow}><FontAwesomeIcon icon={faPlus} className="font-awesome-icons" id="plus-icon"/>&nbsp;Create Project</Nav.Link>
                     <Modal className="modal-class" show={show} onHide={handleClose} scrollable={true}>
                       <Modal.Header className="pl-5 pr-5" closeButton>
                         <Modal.Title className="h4 fw-bold mb-0">New Project</Modal.Title>
@@ -32,7 +36,7 @@ const NavbarComponent = () => {
                       <Modal.Body className="pl-5 pr-5 pt-0">
                         <form>
                           <div className="form-floating mb-3 mt-3">
-                            <input type="text" className="form-control rounded-4" id="floatingCreateProjectName" placeholder="Project Name" />
+                            <input type="text" className="form-control rounded-4" id="floatingCreateProjectName" value={projectNameVal} onChange={ (event) => setProjectNameVal(event.target.value) } placeholder="Project Name" />
                             <label htmlFor="floatingCreateProjectName">Project Name</label>
                           </div>
                           <div className="form-floating mb-3">
@@ -86,7 +90,7 @@ const NavbarComponent = () => {
                         <Button variant="primary" onClick={handleClose}>Save Changes</Button>
                       </Modal.Footer>
                     </Modal>
-                    <Nav.Link href="#" id="nav-link-class"><FontAwesomeIcon icon={faGithub} />&nbsp;GitHub</Nav.Link>
+                    <Nav.Link href="https://github.com/kimanicharles911/emmethub_github_projects_react_and_express_fullstack" target="_blank" id="nav-link-class"><FontAwesomeIcon icon={faGithub} className="font-awesome-icons" id="github-icon"/>&nbsp;GitHub</Nav.Link>
                   </ul>
                 </Nav>
               </Row>
