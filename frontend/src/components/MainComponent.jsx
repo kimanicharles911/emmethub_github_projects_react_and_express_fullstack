@@ -2,6 +2,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faTrash, faPen, faEye } from '@fortawesome/free-solid-svg-icons';
 import './MainComponent.css';
 import {useEffect, useState} from 'react';
+import {ViewModalComponent, EditModalComponent} from '../components'
 
 
 const MainComponent = () => {
@@ -48,7 +49,7 @@ const MainComponent = () => {
         })
       }
     }
-  }
+  };
 
   return(
     <main className="container fluid">
@@ -60,6 +61,8 @@ const MainComponent = () => {
                 <h5 className="card-title">{repository.name}</h5>
                 <p className="card-text">{repository.description}</p>
                 <div className="buttons d-flex flex-row-reverse">
+                  {/* <== Edit Button ==> */}
+                  <a title="Edit" href="#edit" type="button" data-bs-toggle="modal" data-bs-target="#editModal" onClick={() => repoNameReceiverFunc(repository.name)}><FontAwesomeIcon icon={faPen} className="font-awesome-icons" id="pen-icon"/></a>
                   {/* <== View Button ==> */}
                   <a title="View" href="#view" type="button" data-bs-toggle="modal" data-bs-target="#viewModal" onClick={() => repoNameReceiverFunc(repository.name)}><FontAwesomeIcon icon={faEye} className="font-awesome-icons" id="eye-icon"/></a>
                 </div>
@@ -68,47 +71,9 @@ const MainComponent = () => {
           </div>
         ))
         }
-        
-        {/* <== View Modal ==> */}
-        <div className="modal py-5" id="viewModal" tabIndex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
-                  <div className="modal-dialog modal-dialog-scrollable">
-                    <div className="modal-content shadow">
-                      <div className="modal-header p-5" id="view-modal-header">
-                        <h4 className="fw-bold mb-0 container-fluid">{modalData.repoName}</h4>
-                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div className="modal-body pt-0">
-                        <h5 className="mb-0">Description</h5>
-                        <p>{modalData.repoDescription}</p>
-                        <h5 className="mb-0">Repository Link</h5>
-                        <a href={modalData.repoUrl}><p>{modalData.repoUrl}</p></a>
-                        <h5 className="mb-0">Website</h5>
-                        <a href={modalData.repoWebsiteUrl === 'N/A' ? '#' : modalData.repoWebsiteUrl}><p>{modalData.repoWebsiteUrl}</p></a>
-                        <div className="mb-2">
-                          <h5 className="mb-0 set-inline">Topics:</h5>
-                          <p className="set-inline">{modalData.repoTopics.length > 0 ? modalData.repoTopics.map((topic) => ` ${topic} `) : "No topics"}</p>
-                        </div>
-                        <div className="mb-2">
-                          <h5 className="mb-0 set-inline">Branches:</h5>
-                          <p className="set-inline mb-3">{modalData.repoBranches.length > 0 ? modalData.repoBranches.map((branch) => ` ${branch} `) : "No branches"}</p>
-                        </div>
-                        <div className="mb-2">
-                          <h5 className="mb-0 set-inline">Commits:</h5>
-                          <p className="set-inline"> {modalData.repoCommits}</p>
-                        </div>
-                        <div className="mb-2">
-                          <h5 className="mb-0 set-inline">Licensed:</h5>
-                          <p className="set-inline"> {modalData.repoHasLicense === true ? "Yes" : "No"}</p>
-                        </div>
-                        <div className="mb-3">
-                          <h5 className="mb-0 set-inline">Has Readme:</h5>
-                          <p className="set-inline"> {modalData.repoHasReadme === true ? "Yes" : "No"}</p>
-                        </div>
-                        <button type="button" className="btn btn-lg btn-primary w-100" data-bs-dismiss="modal">Great, thanks!</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+
+        <ViewModalComponent modalDataProp={modalData}/>
+        <EditModalComponent modalDataProp={modalData} setModalDataProp={setModalData} repositoriesProp={repositories} setRepositoriesProp={setRepositories}/>
       </section>
     </main>
   )
