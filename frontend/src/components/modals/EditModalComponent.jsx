@@ -6,6 +6,7 @@ import {useState} from 'react';
 const EditModalComponent = ({modalDataProp, setModalDataProp}) => {
 
   const [newTopic, setNewTopic] = useState("");
+  const [newBranch, setNewBranch] = useState("");
 
   const repoNameChangeHandler = (event) => {
     setModalDataProp((prevState) => {
@@ -41,7 +42,6 @@ const EditModalComponent = ({modalDataProp, setModalDataProp}) => {
         repoWebsiteUrl: event.target.value
       }
     })
-    console.log(`😜`, event.target.value);
   };
 
   const repoTopicsChangeHandler = (param) => {
@@ -59,23 +59,41 @@ const EditModalComponent = ({modalDataProp, setModalDataProp}) => {
   };
 
   const addTopicBtnHandler = () => {
-    setModalDataProp((prevState) => {
-      return {
-        ...prevState,
-        repoTopics: [...modalDataProp.repoTopics, newTopic]
-      }
-    })
-    setNewTopic("");
+    if(newTopic.match(/[A-Za-z0-9_]/)) {
+      setModalDataProp((prevState) => {
+        return {
+          ...prevState,
+          repoTopics: [...modalDataProp.repoTopics, newTopic]
+        }
+      })
+      setNewTopic("");
+    }
   };
 
-  const repoBranchesChangeHandler = (event) => {
-    const eventArr = event.target.value.split(' ').filter(x => x !== ',').filter(x => x !== '');
+  const repoBranchesChangeHandler = (param) => {
+    const arr = modalDataProp.repoBranches.filter(x => x !== param);
     setModalDataProp((prevState) => {
       return {
         ...prevState,
-        repoBranches: eventArr
+        repoBranches: arr
       }
     })
+  };
+
+  const addBranchChangeHandler = (event) => {
+    setNewBranch(event.target.value);
+  };
+
+  const addBranchBtnHandler = () => {
+    if(newBranch.match(/[A-Za-z0-9_]/)) {
+      setModalDataProp((prevState) => {
+        return {
+          ...prevState,
+          repoBranches: [...modalDataProp.repoBranches, newBranch]
+        }
+      })
+      setNewBranch("");
+    }
   };
 
   const repoCommitsChangeHandler = (event) => {
@@ -150,8 +168,22 @@ const EditModalComponent = ({modalDataProp, setModalDataProp}) => {
                   </div>
                 </div>
                 <div className="form-floating mb-3">
-                  <input type="text" className="form-control rounded-4" id="floatingBranches" placeholder="Branches"  value={Object.keys(modalDataProp.repoBranches).map((branch) => ` ${modalDataProp.repoBranches[branch]} `)} onChange={repoBranchesChangeHandler}/>
-                  <label htmlFor="floatingBranches">Branches <span className="text-success"> separate branch names with comma</span></label>
+                  <div className="card" id="card-id">
+                    <div className="card-body">
+                        {modalDataProp.repoBranches.length < 1 ? "No branches found": Object.keys(modalDataProp.repoBranches).map((branch, index) => 
+                          <span key={index}>
+                            <span className="badge rounded-pill bg-secondary">
+                              {modalDataProp.repoBranches[branch]}
+                              <FontAwesomeIcon className="cancel-icon" icon={faTimesCircle} onClick={() => repoBranchesChangeHandler(modalDataProp.repoBranches[branch])}/>
+                              </span>&nbsp;
+                          </span>
+                        )}
+                        <div className="input-group mt-2">
+                          <input type="text" className="form-control rounded-4" id="floatingBranches" placeholder="Add a branch" aria-label="Add a branch" aria-describedby="branch-addon" value={newBranch} onChange={addBranchChangeHandler}/>
+                          <span className="input-group-text bg-primary text-white" id="branch-addon" onClick={addBranchBtnHandler}>Add</span>
+                        </div>
+                    </div>
+                  </div>
                 </div>
                 <div className="form-floating mb-3">
                   <input type="number" className="form-control rounded-4" id="floatingCommits" placeholder="Commits"  value={modalDataProp.repoCommits} onChange={repoCommitsChangeHandler}/>
@@ -189,3 +221,9 @@ const EditModalComponent = ({modalDataProp, setModalDataProp}) => {
   );
 };
 export default EditModalComponent;
+
+/* 
+REFERENCES
+==========>
+* Obtained regex from: https://stackoverflow.com/a/336269/9497346
+*/

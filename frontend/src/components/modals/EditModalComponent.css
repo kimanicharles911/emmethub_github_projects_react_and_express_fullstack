@@ -1,6 +1,6 @@
 #card-id{
   box-shadow: none;
 }
-.cancel-icon, #topic-addon{
+.cancel-icon, #topic-addon, #branch-addon{
   cursor: pointer;
 }
