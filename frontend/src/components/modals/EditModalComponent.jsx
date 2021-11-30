@@ -1,8 +1,11 @@
 import './EditModalComponent.css';
 import {faTimesCircle} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {useState} from 'react';
 
 const EditModalComponent = ({modalDataProp, setModalDataProp}) => {
+
+  const [newTopic, setNewTopic] = useState("");
 
   const repoNameChangeHandler = (event) => {
     setModalDataProp((prevState) => {
@@ -41,14 +44,28 @@ const EditModalComponent = ({modalDataProp, setModalDataProp}) => {
     console.log(`😜`, event.target.value);
   };
 
-  const repoTopicsChangeHandler = (event) => {
-    const eventArr = event.target.value.split(' ').filter(x => x !== ',').filter(x => x !== '');
+  const repoTopicsChangeHandler = (param) => {
+    const arr = modalDataProp.repoTopics.filter(x => x !== param);
     setModalDataProp((prevState) => {
       return {
         ...prevState,
-        repoTopics: eventArr
+        repoTopics: arr
       }
     })
+  };
+
+  const addTopicChangeHandler = (event) => {
+    setNewTopic(event.target.value);
+  };
+
+  const addTopicBtnHandler = () => {
+    setModalDataProp((prevState) => {
+      return {
+        ...prevState,
+        repoTopics: [...modalDataProp.repoTopics, newTopic]
+      }
+    })
+    setNewTopic("");
   };
 
   const repoBranchesChangeHandler = (event) => {
@@ -115,21 +132,20 @@ const EditModalComponent = ({modalDataProp, setModalDataProp}) => {
                   <label htmlFor="floatingWebsiteUrl">Website</label>
                 </div>
                 <div className="form-floating mb-3">
-                  <input type="text" className="form-control rounded-4" id="floatingTopics" placeholder="Topics"  value={Object.keys(modalDataProp.repoTopics).map((topic) => ` ${modalDataProp.repoTopics[topic]} `)} onChange={repoTopicsChangeHandler}/>
-                  <label htmlFor="floatingTopics">Topics <span className="text-success"> separate topics with comma</span></label>
-                </div>
-                <div className="form-floating mb-3">
                   <div className="card" id="card-id">
                     <div className="card-body">
-                        {Object.keys(modalDataProp.repoTopics).map((topic) => 
-                          <span>
+                        {modalDataProp.repoTopics.length < 1 ? "No topics found": Object.keys(modalDataProp.repoTopics).map((topic, index) => 
+                          <span key={index}>
                             <span className="badge rounded-pill bg-secondary">
                               {modalDataProp.repoTopics[topic]}
-                              <FontAwesomeIcon icon={faTimesCircle}/>
+                              <FontAwesomeIcon className="cancel-icon" icon={faTimesCircle} onClick={() => repoTopicsChangeHandler(modalDataProp.repoTopics[topic])}/>
                               </span>&nbsp;
                           </span>
                         )}
-                        <input type="text" className="form-control rounded-4 mt-1" id="floatingTopics" placeholder="Add a topic"/>
+                        <div className="input-group mt-2">
+                          <input type="text" className="form-control rounded-4" id="floatingTopics" placeholder="Add a topic" aria-label="Add a topic" aria-describedby="topic-addon" value={newTopic} onChange={addTopicChangeHandler}/>
+                          <span className="input-group-text bg-primary text-white" id="topic-addon" onClick={addTopicBtnHandler}>Add</span>
+                        </div>
                     </div>
                   </div>
                 </div>
