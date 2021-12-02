@@ -144,15 +144,8 @@ const EditModalComponent = ({modalDataProp, setModalDataProp, repositoriesProp, 
       }).catch(err => {
         console.error(`Something went wrong!`, err);
       })
-
-    let arr = repositoriesProp;
-    for(let i = 0; i < arr.length; i++) {
-      if(arr[i].id === modalDataProp.repoId){
-        arr[i] = modalDataProp;
-      }
-    }
+      
     setTimeout(() => {
-      setRepositoriesProp(arr);
       setRenderAgentProp(!renderAgentProp);
     }, 250);
   }

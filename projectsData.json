@@ -70,8 +70,8 @@
   },
   {
     "id": 5,
-    "name": "weather_citywatch#_test",
-    "description": "#_testAn applcation that provides weather data of the city/town a user enters. It uses a weather API. It is developed using Reactjs, deployed here 👉 https://weathercitywatch.netlify.app#_test",
+    "name": "weather_citywatch",
+    "description": "An applcation that provides weather data of the city/town a user enters. It uses a weather API. It is developed using Reactjs, deployed here 👉 https://weathercitywatch.netlify.app",
     "url": "https://github.com/kimanicharles911/weather_citywatch",
     "website_url": "https://weathercitywatch.netlify.app/",
     "topics": [

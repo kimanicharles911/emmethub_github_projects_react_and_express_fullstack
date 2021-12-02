@@ -33,7 +33,7 @@ const MainComponent = () => {
       }
       setRepositories(dataArr);
     })();
-  }, [modalData, renderAgent]);
+  }, [renderAgent]);
   
   const repoNameReceiverFunc = (param) => {
     for(const repo of repositories){
