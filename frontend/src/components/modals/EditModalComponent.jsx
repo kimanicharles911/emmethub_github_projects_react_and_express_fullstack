@@ -2,8 +2,9 @@ import './EditModalComponent.css';
 import {faTimesCircle} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {useState} from 'react';
+import axios from 'axios';
 
-const EditModalComponent = ({modalDataProp, setModalDataProp}) => {
+const EditModalComponent = ({modalDataProp, setModalDataProp, repositoriesProp, setRepositoriesProp, renderAgentProp, setRenderAgentProp}) => {
 
   const [newTopic, setNewTopic] = useState("");
   const [newBranch, setNewBranch] = useState("");
@@ -123,6 +124,39 @@ const EditModalComponent = ({modalDataProp, setModalDataProp}) => {
     })
   };
 
+  const saveChangesBtnHandler = () => {
+    const newObject = {
+      "id": modalDataProp.repoId,
+      "name": modalDataProp.repoName,
+      "description": modalDataProp.repoDescription,
+      "url": modalDataProp.repoUrl,
+      "website_url": modalDataProp.repoWebsiteUrl,
+      "topics": modalDataProp.repoTopics,
+      "branches": modalDataProp.repoBranches,
+      "commits": modalDataProp.repoCommits,
+      "has_license": modalDataProp.repoHasLicense,
+      "has_readme": modalDataProp.repoHasReadme
+    };
+    axios.put(`/api/repository?id=${modalDataProp.repoId}`, newObject)
+      .then(res => {
+        console.log(`Status:`, res.status);
+        console.log(`Data`, res.data);
+      }).catch(err => {
+        console.error(`Something went wrong!`, err);
+      })
+
+    let arr = repositoriesProp;
+    for(let i = 0; i < arr.length; i++) {
+      if(arr[i].id === modalDataProp.repoId){
+        arr[i] = modalDataProp;
+      }
+    }
+    setTimeout(() => {
+      setRepositoriesProp(arr);
+      setRenderAgentProp(!renderAgentProp);
+    }, 250);
+  }
+
   return (
     <div className="modal" id="editModal" tabIndex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-dialog-scrollable" role="document">
@@ -213,7 +247,7 @@ const EditModalComponent = ({modalDataProp, setModalDataProp}) => {
             </div>
             <div className="modal-footer">
               <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" className="btn btn-primary">Save changes</button>
+              <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={saveChangesBtnHandler}>Save changes</button>
             </div>
           </div>
         </div>
@@ -226,4 +260,6 @@ export default EditModalComponent;
 REFERENCES
 ==========>
 * Obtained regex from: https://stackoverflow.com/a/336269/9497346
+* Learnt to make PUT requests from: https://www.cluemediator.com/put-request-using-axios-with-react-hooks
+* Learnt to make PUT requests from: https://youtu.be/9KaMsGSxGno 
 */

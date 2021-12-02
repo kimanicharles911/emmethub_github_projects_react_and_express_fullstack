@@ -107,6 +107,13 @@ app.put('/api/repository', (req, res) => {
       const repository = dataArr.find(repository => repository.id === parseInt(req.query.id));
       repository.name = req.body.name;
       repository.description = req.body.description;
+      repository.url = req.body.url;
+      repository.website_url = req.body.website_url;
+      repository.topics = req.body.topics ;
+      repository.branches = req.body.branches ;
+      repository.commits = req.body.commits ;
+      repository.has_license = req.body.has_license ;
+      repository.has_readme = req.body.has_readme ;
       fileSystem.writeFile('projectsData.json', JSON.stringify(dataArr, null, 2), (err) => {
         if(err) throw err;
         return res.send(`Repository ${repository.id} updated`)

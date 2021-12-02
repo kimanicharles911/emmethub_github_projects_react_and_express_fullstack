@@ -8,6 +8,7 @@ import {ViewModalComponent, EditModalComponent} from '../components'
 const MainComponent = () => {
   const [repositories, setRepositories] = useState([]);
   const [modalData, setModalData] = useState({
+    repoId: '',
     repoName: '',
     repoDescription: '',
     repoUrl: '',
@@ -18,6 +19,7 @@ const MainComponent = () => {
     repoHasLicense: '',
     repoHasReadme: '',
   });
+  const [renderAgent, setRenderAgent] = useState(false)
 
   useEffect(() => {
     (async () => {
@@ -31,12 +33,13 @@ const MainComponent = () => {
       }
       setRepositories(dataArr);
     })();
-  }, []);
+  }, [modalData, renderAgent]);
   
   const repoNameReceiverFunc = (param) => {
     for(const repo of repositories){
       if(repo.name === param){
         setModalData({
+          repoId: repo.id,
           repoName: repo.name,
           repoDescription: repo.description,
           repoUrl: repo.url,
@@ -73,7 +76,7 @@ const MainComponent = () => {
         }
 
         <ViewModalComponent modalDataProp={modalData}/>
-        <EditModalComponent modalDataProp={modalData} setModalDataProp={setModalData} repositoriesProp={repositories} setRepositoriesProp={setRepositories}/>
+        <EditModalComponent modalDataProp={modalData} setModalDataProp={setModalData} repositoriesProp={repositories} setRepositoriesProp={setRepositories} renderAgentProp={renderAgent} setRenderAgentProp={setRenderAgent}/>
       </section>
     </main>
   )

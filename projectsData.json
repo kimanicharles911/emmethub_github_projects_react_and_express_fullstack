@@ -70,8 +70,8 @@
   },
   {
     "id": 5,
-    "name": "weather_citywatch",
-    "description": "An applcation that provides weather data of the city/town a user enters. It uses a weather API. It is developed using Reactjs, deployed here 👉 https://weathercitywatch.netlify.app",
+    "name": "weather_citywatch#_test",
+    "description": "#_testAn applcation that provides weather data of the city/town a user enters. It uses a weather API. It is developed using Reactjs, deployed here 👉 https://weathercitywatch.netlify.app#_test",
     "url": "https://github.com/kimanicharles911/weather_citywatch",
     "website_url": "https://weathercitywatch.netlify.app/",
     "topics": [
@@ -108,7 +108,7 @@
   },
   {
     "id": 7,
-    "name": "testing-a-react-app",
+    "name": "testing-a-react-app#_test",
     "description": "This a repository of create-react-app upon which testing has been conducted using Jest. Check the README description for more details.",
     "url": "https://github.com/kimanicharles911/testing-a-react-app",
     "website_url": "N/A",
@@ -125,7 +125,7 @@
   },
   {
     "id": 8,
-    "name": "static_weather_citywatch",
+    "name": "static_weather_citywatch#_test",
     "description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.",
     "url": "https://github.com/kimanicharles911/static_weather_citywatch",
     "website_url": "https://weathercitywatch.netlify.app/",
