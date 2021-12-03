@@ -2,6 +2,7 @@ import {faTimesCircle} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {useState} from 'react';
 import axios from 'axios';
+import './CreateModalComponent.css';
 
 const CreateModalComponent = ({renderAgentProp, setRenderAgentProp}) => {
 

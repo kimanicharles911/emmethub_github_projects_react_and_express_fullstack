@@ -1,0 +1,9 @@
+#create-modal-header{
+  border-bottom: none;
+}
+#card-id{
+  box-shadow: none;
+}
+.cancel-icon, #topic-addon, #branch-addon{
+  cursor: pointer;
+}
