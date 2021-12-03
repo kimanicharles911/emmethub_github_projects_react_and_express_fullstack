@@ -203,7 +203,7 @@ const CreateModalComponent = ({renderAgentProp, setRenderAgentProp}) => {
               <div className="form-floating mb-3">
                 <div className="card" id="card-id">
                   <div className="card-body">
-                        {field.repoTopics.length < 1 ? "No topics found": Object.keys(field.repoTopics).map((topic, index) => 
+                        {field.repoTopics.length < 1 ? "No topics added": Object.keys(field.repoTopics).map((topic, index) => 
                           <span key={index}>
                             <span className="badge rounded-pill bg-secondary">
                               {field.repoTopics[topic]}
@@ -221,7 +221,7 @@ const CreateModalComponent = ({renderAgentProp, setRenderAgentProp}) => {
               <div className="form-floating mb-3">
                 <div className="card" id="card-id">
                   <div className="card-body">
-                        {field.repoBranches.length < 1 ? "No branches found": Object.keys(field.repoBranches).map((branch, index) => 
+                        {field.repoBranches.length < 1 ? "No branches added": Object.keys(field.repoBranches).map((branch, index) => 
                           <span key={index}>
                             <span className="badge rounded-pill bg-secondary">
                               {field.repoBranches[branch]}
