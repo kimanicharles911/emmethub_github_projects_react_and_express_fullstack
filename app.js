@@ -61,7 +61,7 @@ app.post('/api/repositories/new', (req, res) => {
     dataArr = JSON.parse(data);
 
     const {name, description, url, website_url, topics, branches, commits, has_license, has_readme} = req.body;
-    if(!name || !description || !url || !website_url || !topics || !branches || !commits || !has_license || !has_readme){
+    if(!name || !description || !url || !website_url || !topics || !branches || !commits || typeof(has_license) !== "boolean" || typeof(has_readme) !== "boolean"){
       return res.status(400).send('All fields i.e name, description, url, website_url, topics, branches, commits, has_license, has_readme are required.')
     }
     dataArr.push({

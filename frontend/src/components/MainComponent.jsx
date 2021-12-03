@@ -5,7 +5,7 @@ import {useEffect, useState} from 'react';
 import {ViewModalComponent, EditModalComponent} from '../components'
 
 
-const MainComponent = () => {
+const MainComponent = ({renderAgentProp, setRenderAgentProp}) => {
   const [repositories, setRepositories] = useState([]);
   const [modalData, setModalData] = useState({
     repoId: '',
@@ -19,7 +19,6 @@ const MainComponent = () => {
     repoHasLicense: '',
     repoHasReadme: '',
   });
-  const [renderAgent, setRenderAgent] = useState(false)
 
   useEffect(() => {
     (async () => {
@@ -33,7 +32,7 @@ const MainComponent = () => {
       }
       setRepositories(dataArr);
     })();
-  }, [renderAgent]);
+  }, [renderAgentProp]);
   
   const repoNameReceiverFunc = (param) => {
     for(const repo of repositories){
@@ -76,7 +75,7 @@ const MainComponent = () => {
         }
 
         <ViewModalComponent modalDataProp={modalData}/>
-        <EditModalComponent modalDataProp={modalData} setModalDataProp={setModalData} repositoriesProp={repositories} setRepositoriesProp={setRepositories} renderAgentProp={renderAgent} setRenderAgentProp={setRenderAgent}/>
+        <EditModalComponent modalDataProp={modalData} setModalDataProp={setModalData} repositoriesProp={repositories} setRepositoriesProp={setRepositories} renderAgentProp={renderAgentProp} setRenderAgentProp={setRenderAgentProp}/>
       </section>
     </main>
   )

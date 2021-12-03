@@ -4,7 +4,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {useState} from 'react';
 import axios from 'axios';
 
-const EditModalComponent = ({modalDataProp, setModalDataProp, repositoriesProp, setRepositoriesProp, renderAgentProp, setRenderAgentProp}) => {
+const EditModalComponent = ({modalDataProp, setModalDataProp, renderAgentProp, setRenderAgentProp}) => {
 
   const [newTopic, setNewTopic] = useState("");
   const [newBranch, setNewBranch] = useState("");
@@ -143,6 +143,7 @@ const EditModalComponent = ({modalDataProp, setModalDataProp, repositoriesProp, 
         console.log(`Data`, res.data);
       }).catch(err => {
         console.error(`Something went wrong!`, err);
+        console.error(`Error Message`, err.response);
       })
       
     setTimeout(() => {
@@ -222,17 +223,17 @@ const EditModalComponent = ({modalDataProp, setModalDataProp, repositoriesProp, 
                     <label className="form-check-label" htmlFor="inlineRadio1">Licensed</label>
                   </div>
                   <div className="form-check form-check-inline">
-                    <input type="radio" className="form-check-input" name="inlineRadioOptions" id="inlineRadio2" value="False" checked={modalDataProp.repoHasLicense === false} onChange={repoHasLicenseChangeHandler}/>
+                    <input type="radio" className="form-check-input" name="inlineRadioOptions" id="inlineRadio2" checked={modalDataProp.repoHasLicense === false} onChange={repoHasLicenseChangeHandler}/>
                     <label className="form-check-label" htmlFor="inlineRadio2">Not Licensed</label>
                   </div>
                 </div>
                 <div className="form-floating mb-3">
                   <div className="form-check form-check-inline">
-                    <input type="radio" className="form-check-input" name="inlineRadioOptions2" id="inlineRadio3" value="True" checked={modalDataProp.repoHasReadme === true} onChange={repoHasReadmeChangeHandler}/>
+                    <input type="radio" className="form-check-input" name="inlineRadioOptions2" id="inlineRadio3" checked={modalDataProp.repoHasReadme === true} onChange={repoHasReadmeChangeHandler}/>
                     <label className="form-check-label" htmlFor="inlineRadio3">Has ReadMe</label>
                   </div>
                   <div className="form-check form-check-inline">
-                    <input type="radio" className="form-check-input" name="inlineRadioOptions2" id="inlineRadio4" value="False" checked={modalDataProp.repoHasReadme === false} onChange={repoHasReadmeChangeHandler}/>
+                    <input type="radio" className="form-check-input" name="inlineRadioOptions2" id="inlineRadio4" checked={modalDataProp.repoHasReadme === false} onChange={repoHasReadmeChangeHandler}/>
                     <label className="form-check-label" htmlFor="inlineRadio4">No ReadMe</label>
                   </div>
                 </div>
