@@ -8,8 +8,10 @@
     "dev": "nodemon app.js"
   },
   "engines": {
-    "node": "14.15.1"
+    "node": "14.15.1",
+    "npm": "8.1.1"
   },
+  "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kimanicharles911/emmethub_projects_rest_api.git"

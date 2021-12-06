@@ -158,6 +158,14 @@ app.listen(port, () => {
   console.log(`App server listening at https://localhost:${port}`)
 });
 
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static(__dirname, 'frontend/build'));
+  const path = require('path');
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  });
+}
+
 /* 
   * I first imported the express module.
   * I then stored the called express function in a variable app.
