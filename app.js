@@ -3,6 +3,7 @@ const app = express();
 const port = process.env.PORT || 8080;
 app.use(express.json());
 const fileSystem = require('fs');
+const path = require('path');
 
 /* 
   * I defined a GET route that returns all repositories or specific repositories as per the client's query.
@@ -161,7 +162,7 @@ app.listen(port, () => {
 if(process.env.NODE_ENV === 'production'){
   app.use(express.static(path.join(__dirname, 'frontend/build')));
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+    res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html'));
   });
 }
 
