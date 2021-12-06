@@ -77,10 +77,10 @@
     "topics": [
       "react",
       "api",
+      "bootstrap",
       "weather",
       "react-testing-library",
-      "openweathermapapi",
-      "bootstrap"
+      "openweathermapapi"
     ],
     "branches": [
       "master"
@@ -108,7 +108,7 @@
   },
   {
     "id": 7,
-    "name": "testing-a-react-app#_test",
+    "name": "testing-a-react-app",
     "description": "This a repository of create-react-app upon which testing has been conducted using Jest. Check the README description for more details.",
     "url": "https://github.com/kimanicharles911/testing-a-react-app",
     "website_url": "N/A",
@@ -125,7 +125,7 @@
   },
   {
     "id": 8,
-    "name": "static_weather_citywatch#_test",
+    "name": "static_weather_citywatch",
     "description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.",
     "url": "https://github.com/kimanicharles911/static_weather_citywatch",
     "website_url": "https://weathercitywatch.netlify.app/",
@@ -183,14 +183,12 @@
     "url": "https://github.com/kimanicharles911/jpmorganchase",
     "website_url": "https://jpmorganchase.netlify.app",
     "topics": [
-      "React",
-      "Node"
+      "spring"
     ],
     "branches": [
-      "Master",
-      "Development"
+      "development"
     ],
-    "commits": "87",
+    "commits": "666",
     "has_license": false,
     "has_readme": false
   }

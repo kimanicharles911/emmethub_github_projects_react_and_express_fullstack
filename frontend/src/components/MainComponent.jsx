@@ -2,8 +2,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faTrash, faPen, faEye } from '@fortawesome/free-solid-svg-icons';
 import './MainComponent.css';
 import {useEffect, useState} from 'react';
-import {ViewModalComponent, EditModalComponent} from '../components'
-
+import {ViewModalComponent, EditModalComponent, DeleteModalComponent} from '../components'
 
 const MainComponent = ({renderAgentProp, setRenderAgentProp}) => {
   const [repositories, setRepositories] = useState([]);
@@ -63,6 +62,7 @@ const MainComponent = ({renderAgentProp, setRenderAgentProp}) => {
                 <h5 className="card-title">{repository.name}</h5>
                 <p className="card-text">{repository.description}</p>
                 <div className="buttons d-flex flex-row-reverse">
+                  <a title="Delete" href="#delete" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal" onClick={() => repoNameReceiverFunc(repository.name)}><FontAwesomeIcon icon={faTrash} className="font-awesome-icons" id="trash-icon"/><i className="fas fa-trash-alt"></i></a>
                   {/* <== Edit Button ==> */}
                   <a title="Edit" href="#edit" type="button" data-bs-toggle="modal" data-bs-target="#editModal" onClick={() => repoNameReceiverFunc(repository.name)}><FontAwesomeIcon icon={faPen} className="font-awesome-icons" id="pen-icon"/></a>
                   {/* <== View Button ==> */}
@@ -76,6 +76,7 @@ const MainComponent = ({renderAgentProp, setRenderAgentProp}) => {
 
         <ViewModalComponent modalDataProp={modalData}/>
         <EditModalComponent modalDataProp={modalData} setModalDataProp={setModalData} repositoriesProp={repositories} setRepositoriesProp={setRepositories} renderAgentProp={renderAgentProp} setRenderAgentProp={setRenderAgentProp}/>
+        <DeleteModalComponent modalDataProp={modalData} renderAgentProp={renderAgentProp} setRenderAgentProp={setRenderAgentProp}/>
       </section>
     </main>
   )

@@ -1,4 +1,3 @@
-import {NavIcon} from '../images';
 import {Navbar, Container, Nav, Row} from 'react-bootstrap';
 import './NavbarComponent.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
