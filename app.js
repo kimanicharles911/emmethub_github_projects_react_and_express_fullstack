@@ -151,9 +151,9 @@ app.delete('/api/repository', (req, res) => {
   });
 });
 
-app.get('*', (req, res) => {
+/* app.get('*', (req, res) => {
   res.status(404).send('Sorry! Can’t find that resource. Please check your URL.')
-});
+}); */
 
 app.listen(port, () => {
   console.log(`App server listening at https://localhost:${port}`)
