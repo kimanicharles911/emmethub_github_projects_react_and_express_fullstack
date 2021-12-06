@@ -4,14 +4,11 @@
   "description": "a rest-api that provides clients with all projects by emmethub.com",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js",
     "start": "node app.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --only=dev npm install --prefix && npm run build --prefix frontend"
+    "heroku-postbuild": "cd frontend && npm install && npm run build"
   },
   "engines": {
-    "node": "14.15.1",
-    "npm": "8.1.1"
+    "node": "14.15.1"
   },
   "repository": {
     "type": "git",
@@ -25,7 +22,6 @@
   "homepage": "https://github.com/kimanicharles911/emmethub_projects_rest_api#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "nodemon": "^2.0.14",
-    "path": "^0.12.7"
+    "nodemon": "^2.0.14"
   }
 }
