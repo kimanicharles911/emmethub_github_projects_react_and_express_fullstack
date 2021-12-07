@@ -4,8 +4,10 @@
   "description": "a rest-api that provides clients with all projects by emmethub.com",
   "main": "app.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
     "start": "node app.js",
-    "heroku-postbuild": "cd frontend && npm install && npm run build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build frontend --prefix frontend"
   },
   "engines": {
     "node": "14.15.1"

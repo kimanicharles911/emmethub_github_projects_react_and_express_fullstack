@@ -5,7 +5,6 @@ app.use(express.json());
 const fileSystem = require('fs');
 const path = require('path');
 
-app.use(express.static(path.resolve(__dirname, "./frontend/build")));
 /* 
   * I defined a GET route that returns all repositories or specific repositories as per the client's query.
   * I utilized the fs readFile method to get the json data found in the file projectsData.json
@@ -152,16 +151,22 @@ app.delete('/api/repository', (req, res) => {
   });
 });
 
-app.get('*', (req, res) => {
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static('frontend/build'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
+  })
+}
+/* app.get('*', (req, res) => {
   res.status(404).send('Sorry! Can’t find that resource. Please check your URL.')
-});
+}); */
 
 app.listen(port, () => {
   console.log(`App server listening at https://localhost:${port}`)
 });
 
 /* 
-  * I first imported the express module.
+ * I first imported the express module.
   * I then stored the called express function in a variable app.
   * I stored the port number from the environment variable or port 8080 in a variable called port.
   * I executed the .json() middleware function on the express app function to enable sending of data in JSON format.
