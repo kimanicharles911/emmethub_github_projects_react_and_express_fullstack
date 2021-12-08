@@ -1,3 +1,6 @@
+import './ViewModalComponent.css';
+// I imported the styling from ViewModalComponent.css
+
 const ViewModalComponent = ({modalDataProp}) => {
 
   return (
@@ -12,9 +15,9 @@ const ViewModalComponent = ({modalDataProp}) => {
             <h5 className="mb-0">Description</h5>
             <p>{modalDataProp.repoDescription}</p>
             <h5 className="mb-0">Repository Link</h5>
-            <a href={modalDataProp.repoUrl}><p>{modalDataProp.repoUrl}</p></a>
+            <a href={modalDataProp.repoUrl} className="links"><p>{modalDataProp.repoUrl}</p></a>
             <h5 className="mb-0">Website</h5>
-            <a href={modalDataProp.repoWebsiteUrl === 'N/A' ? '#' : modalDataProp.repoWebsiteUrl}><p>{modalDataProp.repoWebsiteUrl}</p></a>
+            <a href={modalDataProp.repoWebsiteUrl === 'N/A' ? '#' : modalDataProp.repoWebsiteUrl} className="links"><p>{modalDataProp.repoWebsiteUrl}</p></a>
             <div className="mb-2">
               <h5 className="mb-0 set-inline">Topics:</h5>
               <p className="set-inline">{Object.keys(modalDataProp.repoTopics).map((topic) => ` ${modalDataProp.repoTopics[topic]} `)}</p>
@@ -43,3 +46,16 @@ const ViewModalComponent = ({modalDataProp}) => {
   )
 };
 export default ViewModalComponent;
+/* 
+  => I created the ViewModalComponent and destructured the modalDataProp received from the MainModalComponent
+  => This modal has 9 major JSX items:
+      * The description. It is set from the repoDescription modalDataProp object value.
+      * The repository link. It is set from the repoUrl modalDataProp object value.
+      * The website. It is set from the repoWebsiteUrl modalDataProp object values.
+      * The topics. It is set from the repoTopics modalDataProp object value.
+      * The branches. It is set from the repoBranches modalDataProp object value.
+      * The commits. It is set from the repoCommits modalDataProp object value.
+      * The licensed. It is set from the repoHasLicense modalDataProp object value.
+      * The Has Readme. It is set from the repoHasReadme modalDataProp object value.
+      * The Great, thanks! button. It is used to close the view modal.
+*/

@@ -4,6 +4,14 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {useState} from 'react';
 import axios from 'axios';
 
+/* 
+  * I first imported the styling
+  * I imported the faTimesCircle from the font-awesome library
+  * I imported the FontAwesomeIcon library from the font-awesome library
+  * I then imported the useState hook from react.
+  * I imported the axios promise based http client.
+*/
+
 const EditModalComponent = ({modalDataProp, setModalDataProp, renderAgentProp, setRenderAgentProp}) => {
 
   const [newTopic, setNewTopic] = useState("");
@@ -151,6 +159,29 @@ const EditModalComponent = ({modalDataProp, setModalDataProp, renderAgentProp, s
     }, 250);
   }
 
+  /* 
+    * I created the EditModalComponent and destructured the modalDataProp, setModalDataProp, renderAgentProp and setRenderAgentProp passed from the MainModalComponent.
+    * I then created a state variable called newTopic and setNewTopic and set it's default value to an empty string. It will be used to store the newest topic added by the user.
+    * I then created a state variable called newBranch and setNewBranch and set it's default value to an empty string. It will be used to store the newest branch added by the user.
+    * I created event handler functions for handling different kind of events. Most of this functions use setState callback functions to update the modalDataProp state variable. This are:
+        * The repoNameChangeHandler which updates the project name in the modalDataProp variable.
+        * The repoDescriptionChangeHandler which updates the project description in the modalDataProp variable.
+        * The repoUrlChangeHandler which updates the project repository link in the modalDataProp variable.
+        * The repoWebsiteUrlChangeHandler which updates the project website URL in the modalDataProp variable.
+        * The repoTopicsChangeHandler which removes the deleted topic from the existing array of topics in the project.
+        * The addTopicChangeHandler which stores a new topic the user wants to add to the project in the newTopic state variable.
+        * The addTopicBtnHandler which adds the newTopic entered by the user into the existing array of topics in the project and then sets the value of the newTopic state variable to an empty string.        
+        * The repoBranchesChangeHandler which removes the deleted branch from the existing array of branches in the project.
+        * The addBranchChangeHandler which stores a new branch the user wants to add to the project in the newBranch state variable.
+        * The addBranchBtnHandler which adds the newBranch entered by the user into the existing array of branches in the project and then sets the value of the newBranch state variable to an empty string.        
+        * The repoCommitsChangeHandler which updates the project commits in the modalDataProp variable.
+        * The repoHasLicenseChangeHandler which updates the project license availability in the modalDataProp variable
+        * The repoHasReadmeChangeHandler which updates the project read me availability in the modalDataProp variable
+        * The saveChangesBtnHandler function which has an object with similar keys to those of the API to store the respective values which are taken by axios that updates the API with the new project details.
+    * The axios function has a try catch block that returns necessary responses in either case of a successful or failed update to the API.
+    * After 250 ms the boolean value of the setRenderAgentProp state variable is changed causing a fetch from the API that updates the projects data in the whole application.
+  */
+
   return (
     <div className="modal" id="editModal" tabIndex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-dialog-scrollable" role="document">
@@ -249,6 +280,24 @@ const EditModalComponent = ({modalDataProp, setModalDataProp, renderAgentProp, s
   );
 };
 export default EditModalComponent;
+
+/* 
+  => This modal has 14 major JSX items which all use two way binding of the value and onChange attributes:
+      * The project name input. It is set from the repoName modalDataProp object value and calls the repoNameChangeHandler function on change.
+      * The project description input. It is set from the repoDescription modalDataProp object value and calls the repoDescriptionChangeHandler function on change.
+      * The project repository link input. It is set from the repoUrl modalDataProp object value and calls the repoUrlChangeHandler function on change.
+      * The project website input. It is set from the repoWebsiteUrl modalDataProp object value and calls the repoWebsiteUrlChangeHandler function on change.
+      * The project topics badges. They are set from the repoTopics modalDataProp object array values and call the repoTopicsChangeHandler function on change.
+      * The project topic input. It is set from the newTopic state variable and calls the addTopicChangeHandler function on change.
+      * The button for adding topics which calls the addTopicBtnHandler function on click.
+      * The project branches badges. They are set from the repoBranches modalDataProp object array values and call the repoBranchesChangeHandler function on change.
+      * The project branch input. It is set from the newBranch state variable and calls the addBranchChangeHandler function on change.
+      * The button for adding branches which calls the addBranchBtnHandler function on click.
+      * The project commits input. It is set from the repoCommits modalDataProp object value and calls the repoCommitsChangeHandler function on change.
+      * The project has license radio buttons. One radio button is turned on if it's boolean condition is true using the repoHasLicense modalDataProp object value. On change they call the repoHasLicenseChangeHandler function.
+      * The project has read me radio buttons. One radio button is turned on if it's boolean condition is true using the repoHasReadme modalDataProp object value. On change they call the repoHasReadmeChangeHandler function.
+      * The Save Changes button. It is used to call the saveChangesBtnHandler function that makes sure the edited project changes are saved.
+*/
 
 /* 
 REFERENCES

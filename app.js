@@ -151,15 +151,19 @@ app.delete('/api/repository', (req, res) => {
   });
 });
 
+/* 
+  * I created a function that enables serving of static files from the frontend.
+  * I begun with a condition that ensures that the operating environment is production.
+  * I then set the static folder location.
+  * I then set the route to all other possible routes so as to load the frontend root file which in react is a index.html file.
+*/
 if(process.env.NODE_ENV === 'production'){
   app.use(express.static('frontend/build'));
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+    // res.status(404).send('Sorry! Can’t find that resource. Please check your URL.');
   })
 }
-/* app.get('*', (req, res) => {
-  res.status(404).send('Sorry! Can’t find that resource. Please check your URL.')
-}); */
 
 app.listen(port, () => {
   console.log(`App server listening at https://localhost:${port}`)
@@ -173,4 +177,10 @@ app.listen(port, () => {
   * I imported the fileSystem module to enable me write to files.
   * From the app object with the express function I used the listen method and set the port.
   * I then added a get request that returns a fail message for any request to an undefined route.
+*/
+
+/* 
+REFERENCES
+==========>
+* Learnt to deploy a fullstack application from: https://youtu.be/71wSzpLyW9k
 */

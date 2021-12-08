@@ -1,6 +1,8 @@
+/* Assigned all anchor tags the Dancing Script font from Google fonts */
 a{
   font-family: 'Dancing Script', cursive;
 }
+/* I styled the bootstrap card with a border radius and box-shadow */
 .card{
   border-radius: 8px;
   box-shadow: 0px 2px 10px rgba(16, 52, 100, 1);
@@ -12,23 +14,25 @@ a{
   right: 1rem;
   top: 4.5rem;
 } */
+/* I styled the font awesome icons a purple color, aligned them and assigned a font-size */
 .font-awesome-icons{
   color: #6084f1;
   text-align: right;
   font-size: 14px;
 }
+/* I set the spacing around each font awesome icon in the main component */
 .svg-inline--fa.fa-w-14, .svg-inline--fa.fa-w-16, .svg-inline--fa.fa-w-18{
   width: 30px;;
 }
-#view-modal-header{
+/* I removed the horizontal default border of the view and edit modals */
+#view-modal-header, #edit-modal-header{
   border-bottom: 0px;
 }
-#edit-modal-header{
-  border-bottom: 0px;
-}
-/* .modal-dialog{
+/* 
+.modal-dialog{
   width: 400px;
-} */
+}
 .set-inline{
   display: inline;
 }
+ */

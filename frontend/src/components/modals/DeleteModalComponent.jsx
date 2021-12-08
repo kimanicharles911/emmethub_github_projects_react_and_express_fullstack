@@ -1,4 +1,5 @@
 import axios from 'axios';
+// I imported the axios promise based http client. 
 
 const DeleteModalComponent = ({modalDataProp, renderAgentProp, setRenderAgentProp}) => {
 
@@ -16,6 +17,13 @@ const DeleteModalComponent = ({modalDataProp, renderAgentProp, setRenderAgentPro
       setRenderAgentProp(!renderAgentProp);
     }, 250)
   }
+
+  /* 
+    * I created the DeleteModalComponent and destructured the modalDataProp, renderAgentProp and setRenderAgentProp passed from the MainComponent.
+    * The deleteProjectBtnHandler which deletes the project the user has chosen to delete from the API.
+    * The axios function has a try catch block that returns necessary responses in either case of a successful or failed project deletion in the API.
+    * After 250 ms the boolean value of the setRenderAgentProp state variable is changed causing a fetch from the API that updates the projects data in the whole application.
+  */
 
   return (
     <div className="modal" id="deleteModal" tabIndex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -38,3 +46,8 @@ const DeleteModalComponent = ({modalDataProp, renderAgentProp, setRenderAgentPro
   );
 }
 export default DeleteModalComponent;
+/* 
+  => This modal has 2 major JSX items:
+    * The deleting message which shows the user the project they want to delete.
+    * The proceed to delete button which when clicked calls the deleteProjectBtnHandler function that deletes the project.
+*/

@@ -1,6 +1,8 @@
+/* removed the default box-shadow styling that came with the topics and branches cards */
 #card-id{
   box-shadow: none;
 }
+/* changed the cursor style of the the topic and branches deleting/cancelling icons and also that of their add buttons.*/
 .cancel-icon, #topic-addon, #branch-addon{
   cursor: pointer;
 }
