@@ -1,5 +1,5 @@
 
-<h1 align="center"><a href="https://emmethubprojectsrestapi.herokuapp.com/api" target="_blank">🌐 emmethub projects rest api</a></h1>
+<h1 align="center"><a href="https://emmethubgithubprojectsmern.herokuapp.com" target="_blank">🌐 emmethub github projects react and express fullstack</a></h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://github.com/kimanicharles911/emmethub_nodejs_modules/blob/master/LICENSE.txt" target="_blank">
@@ -7,21 +7,104 @@
   </a>
 </p>
 
-> This is the repository of a REST-API that provides access to data about some of the projects done by Emmethub. It has been created using Expressjs and covers the 4 main http methods. It stores data in a JSON file. The comments the file app.js allow easy understanding of how it functions.
+> This is the repository of a fullstack web application. It enables Emmethub to view, create, edit and delete data and projects of it's github repositories. This is achieved using a Reactjs frontend, a Nodejs/Expressjs backend REST-API and JSON file database. It has been created using Reactjs, Expressjs, bootstrap and the axios http client. The REST-API manages how data on projects by Emmethub is changed. The comments the file app.js allow easy understanding of how it functions.
 
 ## Deployed at
-* https://emmethubprojectsrestapi.herokuapp.com/api
+* https://emmethubgithubprojectsmern.herokuapp.com
 
-##### API Usage
+***
+## Frontend
+
+* It is located in the folder called frontend in this repository.
+
+#### Setup/Installation Requirements
+##### Install Dependencies
+
+```
+npm install
+```
+
+##### Run React Development Server
+
+```
+npm run start
+```
+
+##### To Build for Production
+
+```
+Nothing is done inside the frontend folder all building configuration is done in the backend.
+```
+
+## How It Was Built
+##### Create React App
+```
+npx create-react-app
+npm i --save bootstrap
+npm i --save react-bootstrap
+npm i --save react-router-bootstrap
+npm i --save @fortawesome/fontawesome-svg-core
+npm i --save @fortawesome/free-solid-svg-icons
+npm i --save @fortawesome/react-fontawesome
+npm i --save @fortawesome/free-brands-svg-icons
+npm i --save @fortawesome/free-regular-svg-icons
+npm i --save font-awesome
+npm i --save axios
+```
+##### Dependencies
+* Bootstrap
+* React Bootstrap
+* fortawesome
+* font-awesome
+* axios
+
+##### src folder structure
+```
+src/
+  Components/
+    modals/
+      CreateModalComponent.css
+      CreateModalComponent.jsx
+      DeleteModalComponent.jsx
+      EditModalComponent.css
+      EditModalComponent.jsx
+      ViewModalComponent.css
+      ViewModalComponent.jsx
+    MainComponent.css 
+    MainComponent.jsx
+    NavbarComponent.css
+    NavbarComponent.jsx
+    index.js
+  images/
+    index.js
+    nav-icon.svg
+  App.css
+  App.js
+  App.test.js
+  index.css
+  logo.svg
+  reportWebVitals.js
+  setupTests.js
+```
+
+***
+## Backend
+
+* It is located in the root of this repository.
+#### Deployed at
+* https://emmethubgithubprojectsmern.herokuapp.com/api
+
+#### API Usage
 | HTTP method      |   EndPoint   |   Public Access   |   Example   |
 | ---- |:---- |:---- |:---- |
-| GET     | /api/    |  TRUE    |  https://emmethubprojectsrestapi.herokuapp.com/api/    |
-| GET     | /api?id=2    |  TRUE    |  https://emmethubprojectsrestapi.herokuapp.com/api?id=2    |
-| POST     | /api/repositories/new/    |  TRUE    |  https://emmethubprojectsrestapi.herokuapp.com/api/repositories/new/    |
-| PUT     | /api/repository?id=2    |  TRUE    |  https://emmethubprojectsrestapi.herokuapp.com/api/repository?id=2    |
-| DELETE     | /api/repository?id=2    |  TRUE    |  https://emmethubprojectsrestapi.herokuapp.com/api/repository?id=2    |
+| GET     | /api/    |  TRUE    |  https://emmethubgithubprojectsmern.herokuapp.com/api/    |
+| GET     | /api?id=2    |  TRUE    |  https://emmethubgithubprojectsmern.herokuapp.com/api?id=2    |
+| POST     | /api/repositories/new/    |  TRUE    |  https://emmethubgithubprojectsmern.herokuapp.com/api/repositories/new/    |
+| PUT     | /api/repository?id=2    |  TRUE    |  https://emmethubgithubprojectsmern.herokuapp.com/api/repository?id=2    |
+| DELETE     | /api/repository?id=2    |  TRUE    |  https://emmethubgithubprojectsmern.herokuapp.com/api/repository?id=2    |
 
-## Setup/Installation Requirements
+#### Setup/Installation Requirements
+
 ##### Install Dependencies
 
 ```sh
@@ -51,20 +134,33 @@ npm run dev
 npm init
 npm i express
 npm i nodemon --save-dev
+npm i --save path
 ```
 
 ##### Dependencies
 * Node
 * Express
 * Nodemon
+* Path
 
 ##### Deploy to Heroku
 * Add this in package.json
 ```sh
 "engines": {
-  "node": "14.15.1"
+  "node": "14.15.1",
+  "npm": "8.1.1"
 }
 ```
+* Add the below LOC to the app.js file
+```sh
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static('frontend/build'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  })
+}
+```
+
 * Then run the following terminal commands:
 ```sh
 install heroku
@@ -79,7 +175,7 @@ web: node app.js
 
 * Then run the following terminal commands:
 ```sh
-heroku create
+heroku create emmethubgithubprojectsmern
 heroku login
 touch Procfile
 git add . 
@@ -101,7 +197,7 @@ README.md
 
 ## License and Copyright Information.
 
-This project is MIT licensed see [my MIT LICENSE](https://github.com/kimanicharles911/emmethub_projects_rest_api/blob/master/LICENSE.txt) for details.<br />
+This project is MIT licensed see [my MIT LICENSE](https://github.com/kimanicharles911/emmethub_github_projects_react_and_express_fullstack/blob/master/LICENSE.txt) for details.<br />
 Copyright © 2021 [Charles Kimani & Emmethub](https://github.com/kimanicharles911).
 
 ### Author
