@@ -6,6 +6,14 @@ const fileSystem = require('fs');
 const path = require('path');
 const helmet = require('helmet');
 app.use(helmet());
+app.use(
+  helmet.contentSecurityPolicy({
+    useDefaults: true,
+    directives: {
+      "script-src": ["'self'", "'unsafe-inline'", "example.com"],
+    },
+  })
+);
 
 /* 
   * I defined a GET route that returns all repositories or specific repositories as per the client's query.
