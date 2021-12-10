@@ -8,9 +8,9 @@ const DeleteModalComponent = ({modalDataProp, renderAgentProp, setRenderAgentPro
   const deleteProjectBtnHandler = () => {
     axios.delete(`/api/repository?id=${modalDataProp.repoId}`)
       .then(res => {
-        axiosResponseMessage.axiosResponseMessage(res);
+        axiosResponseMessage.moduleFunc(res);
       }).catch(err => {
-        axiosErrorMessage.axiosErrorMessage(err);
+        axiosErrorMessage.moduleFunc(err);
       })
 
     setTimeout(() => {

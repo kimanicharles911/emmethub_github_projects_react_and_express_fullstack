@@ -5,6 +5,7 @@ import {useState} from 'react';
 import axios from 'axios';
 import axiosResponseMessage from '../../modules/axiosResponseMessage.js';
 import axiosErrorMessage from '../../modules/axiosErrorMessage.js';
+import objectCreator from '../../modules/objectCreator.js';
 
 /* 
   * I first imported the styling
@@ -125,7 +126,7 @@ const EditModalComponent = ({modalDataProp, setModalDataProp, renderAgentProp, s
     })
   };
 
-  const repoHasReadmeChangeHandler = (event) => {
+  const repoHasReadmeChangeHandler = () => {
     setModalDataProp((prevState) => {
       return {
         ...prevState,
@@ -135,23 +136,12 @@ const EditModalComponent = ({modalDataProp, setModalDataProp, renderAgentProp, s
   };
 
   const saveChangesBtnHandler = () => {
-    const newObject = {
-      "id": modalDataProp.repoId,
-      "name": modalDataProp.repoName,
-      "description": modalDataProp.repoDescription,
-      "url": modalDataProp.repoUrl,
-      "website_url": modalDataProp.repoWebsiteUrl,
-      "topics": modalDataProp.repoTopics,
-      "branches": modalDataProp.repoBranches,
-      "commits": modalDataProp.repoCommits,
-      "has_license": modalDataProp.repoHasLicense,
-      "has_readme": modalDataProp.repoHasReadme
-    };
+    const newObject = objectCreator.moduleFunc(modalDataProp);
     axios.put(`/api/repository?id=${modalDataProp.repoId}`, newObject)
       .then(res => {
-        axiosResponseMessage.axiosResponseMessage(res);
+        axiosResponseMessage.moduleFunc(res);
       }).catch(err => {
-        axiosErrorMessage.axiosErrorMessage(err);
+        axiosErrorMessage.moduleFunc(err);
       })
       
     setTimeout(() => {

@@ -5,6 +5,7 @@ import axios from 'axios';
 import './CreateModalComponent.css';
 import axiosResponseMessage from '../../modules/axiosResponseMessage.js';
 import axiosErrorMessage from '../../modules/axiosErrorMessage.js';
+import objectCreator from '../../modules/objectCreator.js';
 
 /* 
   * I first imported the faTimesCircle from the font-awesome library
@@ -146,23 +147,12 @@ const CreateModalComponent = ({renderAgentProp, setRenderAgentProp}) => {
   };
 
   const createProjectBtnHandler = () => {
-    const newObject = {
-      "name": field.repoName,
-      "description": field.repoDescription,
-      "url": field.repoUrl,
-      "website_url": field.repoWebsiteUrl,
-      "topics": field.repoTopics,
-      "branches": field.repoBranches,
-      "commits": field.repoCommits,
-      "has_license": field.repoHasLicense,
-      "has_readme": field.repoHasReadme
-    };
-    
+    const newObject = objectCreator.moduleFunc(field);
     axios.post('/api/repositories/new', newObject)
       .then(res => {
-        axiosResponseMessage.axiosResponseMessage(res);
+        axiosResponseMessage.moduleFunc(res);
       }).catch(err => {
-        axiosErrorMessage.axiosErrorMessage(err);
+        axiosErrorMessage.moduleFunc(err);
       })
     
     setField({
