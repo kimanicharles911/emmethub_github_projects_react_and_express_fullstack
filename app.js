@@ -195,4 +195,5 @@ app.listen(port.EXPRESS_APP_PORT, () => {
 REFERENCES
 ==========>
 * Learnt to deploy a fullstack application from: https://youtu.be/71wSzpLyW9k
+* Learnt to debug helmet deployment issue on contentSecurityPolicy from: https://stackoverflow.com/a/65894606/9497346
 */
