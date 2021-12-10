@@ -124,6 +124,13 @@ npm i
 npm run dev
 ```
 
+##### Test Helmet protection
+* The result of running the below command should be different. Refer to [this video](https://youtu.be/tGMPWVl_l9Y) for more details.
+* Replace the port with the one you use.
+```sh
+curl http://localhost:8080 --include
+```
+
 ## No Data/JSON returned ?
 > If while using the GET endpoint no JSON data is returned it means that someone used the DELETE endpoint to delete all the data provided by this API. Hence you can:
 1.Clone this repo and run it locally, that way it will work well with all the original data.
