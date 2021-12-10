@@ -50,6 +50,7 @@ npm i --save @fortawesome/free-brands-svg-icons
 npm i --save @fortawesome/free-regular-svg-icons
 npm i --save font-awesome
 npm i --save axios
+npm i --save helmet
 ```
 ##### Dependencies
 * Bootstrap

@@ -4,6 +4,8 @@ const port = process.env.PORT || 8080;
 app.use(express.json());
 const fileSystem = require('fs');
 const path = require('path');
+const helmet = require('helmet');
+app.use(helmet());
 
 /* 
   * I defined a GET route that returns all repositories or specific repositories as per the client's query.
@@ -175,6 +177,8 @@ app.listen(port, () => {
   * I stored the port number from the environment variable or port 8080 in a variable called port.
   * I executed the .json() middleware function on the express app function to enable sending of data in JSON format.
   * I imported the fileSystem module to enable me write to files.
+  * I imported the helmet library which improves the security of my App.
+  * I then executed the helmet middleware function on the the express ap function.
   * From the app object with the express function I used the listen method and set the port.
   * I then added a get request that returns a fail message for any request to an undefined route.
 */
