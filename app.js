@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 8080;
+const port = require('./config');
 app.use(express.json());
 const fileSystem = require('fs');
 const path = require('path');
@@ -175,14 +175,14 @@ if(process.env.NODE_ENV === 'production'){
   })
 }
 
-app.listen(port, () => {
-  console.log(`App server listening at https://localhost:${port}`)
+app.listen(port.EXPRESS_APP_PORT, () => {
+  console.log(`App server listening at https://localhost:${port.EXPRESS_APP_PORT}`)
 });
 
 /* 
  * I first imported the express module.
   * I then stored the called express function in a variable app.
-  * I stored the port number from the environment variable or port 8080 in a variable called port.
+  * I stored the EXPRESS_APP_PORT module from the config folder in a variable called port.
   * I executed the .json() middleware function on the express app function to enable sending of data in JSON format.
   * I imported the fileSystem module to enable me write to files.
   * I imported the helmet library which improves the security of my App.
