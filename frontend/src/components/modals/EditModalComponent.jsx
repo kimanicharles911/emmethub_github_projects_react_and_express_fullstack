@@ -3,6 +3,8 @@ import {faTimesCircle} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {useState} from 'react';
 import axios from 'axios';
+import axiosResponseMessage from '../../modules/axiosResponseMessage.js';
+import axiosErrorMessage from '../../modules/axiosErrorMessage.js';
 
 /* 
   * I first imported the styling
@@ -147,11 +149,9 @@ const EditModalComponent = ({modalDataProp, setModalDataProp, renderAgentProp, s
     };
     axios.put(`/api/repository?id=${modalDataProp.repoId}`, newObject)
       .then(res => {
-        console.log(`Status:`, res.status);
-        console.log(`Data`, res.data);
+        axiosResponseMessage.axiosResponseMessage(res);
       }).catch(err => {
-        console.error(`Something went wrong!`, err);
-        console.error(`Error Message`, err.response);
+        axiosErrorMessage.axiosErrorMessage(err);
       })
       
     setTimeout(() => {

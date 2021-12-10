@@ -1,4 +1,6 @@
 import axios from 'axios';
+import axiosResponseMessage from '../../modules/axiosResponseMessage.js';
+import axiosErrorMessage from '../../modules/axiosErrorMessage.js';
 // I imported the axios promise based http client. 
 
 const DeleteModalComponent = ({modalDataProp, renderAgentProp, setRenderAgentProp}) => {
@@ -6,11 +8,9 @@ const DeleteModalComponent = ({modalDataProp, renderAgentProp, setRenderAgentPro
   const deleteProjectBtnHandler = () => {
     axios.delete(`/api/repository?id=${modalDataProp.repoId}`)
       .then(res => {
-        console.log(`Status`, res.status);
-        console.log(`Data`, res.data);
+        axiosResponseMessage.axiosResponseMessage(res);
       }).catch(err => {
-        console.error(`Something went wrong!`, err);
-        console.error(`Error Message`, err.response);
+        axiosErrorMessage.axiosErrorMessage(err);
       })
 
     setTimeout(() => {

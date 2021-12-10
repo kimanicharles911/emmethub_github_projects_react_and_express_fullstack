@@ -3,6 +3,8 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {useState} from 'react';
 import axios from 'axios';
 import './CreateModalComponent.css';
+import axiosResponseMessage from '../../modules/axiosResponseMessage.js';
+import axiosErrorMessage from '../../modules/axiosErrorMessage.js';
 
 /* 
   * I first imported the faTimesCircle from the font-awesome library
@@ -158,11 +160,9 @@ const CreateModalComponent = ({renderAgentProp, setRenderAgentProp}) => {
     
     axios.post('/api/repositories/new', newObject)
       .then(res => {
-        console.log(`Status:`, res.status);
-        console.log(`Data`, res.data);
+        axiosResponseMessage.axiosResponseMessage(res);
       }).catch(err => {
-        console.error(`Something went wrong!`, err);
-        console.error(`Error Message`, err.response);
+        axiosErrorMessage.axiosErrorMessage(err);
       })
     
     setField({
