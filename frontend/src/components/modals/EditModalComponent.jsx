@@ -53,8 +53,8 @@ const EditModalComponent = ({modalDataProp, setModalDataProp, renderAgentProp, s
     })
   };
 
-  const repoTopicsChangeHandler = (param) => {
-    const arr = modalDataProp.repoTopics.filter(x => x !== param);
+  const repoTopicsChangeHandler = (selectedRepoTopic) => {
+    const arr = modalDataProp.repoTopics.filter(repoTopic => repoTopic !== selectedRepoTopic);
     setModalDataProp((prevState) => {
       return {
         ...prevState,
@@ -79,8 +79,8 @@ const EditModalComponent = ({modalDataProp, setModalDataProp, renderAgentProp, s
     }
   };
 
-  const repoBranchesChangeHandler = (param) => {
-    const arr = modalDataProp.repoBranches.filter(x => x !== param);
+  const repoBranchesChangeHandler = (selectedRepoBranch) => {
+    const arr = modalDataProp.repoBranches.filter(repoBranch => repoBranch !== selectedRepoBranch);
     setModalDataProp((prevState) => {
       return {
         ...prevState,

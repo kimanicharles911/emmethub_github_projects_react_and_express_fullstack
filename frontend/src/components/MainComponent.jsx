@@ -40,9 +40,9 @@ const MainComponent = ({renderAgentProp, setRenderAgentProp}) => {
     })();
   }, [renderAgentProp]);
   
-  const repoNameReceiverFunc = (param) => {
+  const repoNameReceiverFunc = (selectedRepoName) => {
     for(const repo of repositories){
-      if(repo.name === param){
+      if(repo.name === selectedRepoName){
         setModalData({
           repoId: repo.id,
           repoName: repo.name,

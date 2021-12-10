@@ -64,8 +64,8 @@ const CreateModalComponent = ({renderAgentProp, setRenderAgentProp}) => {
     })
   };
 
-  const repoTopicsChangeHandler = (param) => {
-    const arr = field.repoTopics.filter(x => x !== param);
+  const repoTopicsChangeHandler = (selectedRepoTopic) => {
+    const arr = field.repoTopics.filter(repoTopic => repoTopic !== selectedRepoTopic);
     setField((prevState) => {
       return {
         ...prevState,
@@ -90,8 +90,8 @@ const CreateModalComponent = ({renderAgentProp, setRenderAgentProp}) => {
     }
   };
 
-  const repoBranchesChangeHandler = (param) => {
-    const arr = field.repoBranches.filter(x => x !== param);
+  const repoBranchesChangeHandler = (selectedRepoBranch) => {
+    const arr = field.repoBranches.filter(repoBranch => repoBranch !== selectedRepoBranch);
     setField((prevState) => {
       return {
         ...prevState,
