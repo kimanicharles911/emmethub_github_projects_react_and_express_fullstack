@@ -1,6 +1,5 @@
 import axios from 'axios';
-import axiosResponseMessage from '../../modules/axiosResponseMessage.js';
-import axiosErrorMessage from '../../modules/axiosErrorMessage.js';
+import {axiosErrorMessage, axiosResponseMessage} from '../../modules';
 // I imported the axios promise based http client. 
 
 const DeleteModalComponent = ({modalDataProp, renderAgentProp, setRenderAgentProp}) => {

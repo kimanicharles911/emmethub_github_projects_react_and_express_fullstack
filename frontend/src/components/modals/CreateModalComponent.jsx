@@ -3,9 +3,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {useState} from 'react';
 import axios from 'axios';
 import './CreateModalComponent.css';
-import axiosResponseMessage from '../../modules/axiosResponseMessage.js';
-import axiosErrorMessage from '../../modules/axiosErrorMessage.js';
-import objectCreator from '../../modules/objectCreator.js';
+import {axiosErrorMessage, axiosResponseMessage, objectCreator} from '../../modules';
 
 /* 
   * I first imported the faTimesCircle from the font-awesome library
