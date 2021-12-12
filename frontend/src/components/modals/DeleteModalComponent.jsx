@@ -1,6 +1,9 @@
 import axios from 'axios';
 import {axiosErrorMessage, axiosResponseMessage} from '../../modules';
-// I imported the axios promise based http client. 
+/* 
+  * I imported the axios promise based http client. 
+  * I imported custom axios modules.
+*/
 
 const DeleteModalComponent = ({modalDataProp, renderAgentProp, setRenderAgentProp}) => {
 
@@ -20,7 +23,7 @@ const DeleteModalComponent = ({modalDataProp, renderAgentProp, setRenderAgentPro
   /* 
     * I created the DeleteModalComponent and destructured the modalDataProp, renderAgentProp and setRenderAgentProp passed from the MainComponent.
     * The deleteProjectBtnHandler which deletes the project the user has chosen to delete from the API.
-    * The axios function has a try catch block that returns necessary responses in either case of a successful or failed project deletion in the API.
+    * The axios function has a try catch block that returns necessary responses in either case of a successful or failed project deletion in the API using the axiosResponseMessage and axiosErrorMessage modules.
     * After 250 ms the boolean value of the setRenderAgentProp state variable is changed causing a fetch from the API that updates the projects data in the whole application.
   */
 

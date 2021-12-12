@@ -11,6 +11,7 @@ import {axiosErrorMessage, axiosResponseMessage, objectCreator} from '../../modu
   * I then imported the useState hook from react.
   * I imported the axios promise based http client.
   * I then imported the styling
+  * I imported custom axios and the objectCreator modules.
 */
 
 const CreateModalComponent = ({renderAgentProp, setRenderAgentProp}) => {
@@ -189,8 +190,8 @@ const CreateModalComponent = ({renderAgentProp, setRenderAgentProp}) => {
         * The createRepoCommitsChangeHandler which stores the new project commits in the field variable.
         * The createRepoHasLicenseChangeHandler which stores the new project license availability boolean in the field variable
         * The createRepoHasReadmeChangeHandler which stores the new project read me availability boolean in the field variable
-        * The createProjectBtnHandler function which has an object with similar keys to those of the API to store the respective values which are taken by axios that creates that project in the API.
-    * The axios function has a try catch block that returns necessary responses in either case of a successful or failed project creation in the API.
+        * The createProjectBtnHandler function which has an object whose value is received from the objectCreator module.
+    * The axios function has a try catch block that returns necessary responses in either case of a successful or failed project creation in the API using the axiosResponseMessage and axiosErrorMessage modules.
     * After 250 ms the boolean value of the setRenderAgentProp state variable is changed causing a fetch from the API that updates the projects data in the whole application.
   */
 

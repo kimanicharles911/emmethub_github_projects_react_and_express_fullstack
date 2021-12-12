@@ -4,3 +4,5 @@ export {default as ViewModalComponent} from './modals/ViewModalComponent.jsx';
 export {default as EditModalComponent} from './modals/EditModalComponent.jsx';
 export {default as CreateModalComponent} from './modals/CreateModalComponent.jsx';
 export {default as DeleteModalComponent} from './modals/DeleteModalComponent.jsx';
+
+// I created a file to ease importation of custom react components where they are used.

@@ -11,6 +11,7 @@ import {axiosErrorMessage, axiosResponseMessage, objectCreator} from '../../modu
   * I imported the FontAwesomeIcon library from the font-awesome library
   * I then imported the useState hook from react.
   * I imported the axios promise based http client.
+  * I imported custom axios and the objectCreator modules.
 */
 
 const EditModalComponent = ({modalDataProp, setModalDataProp, renderAgentProp, setRenderAgentProp}) => {
@@ -165,8 +166,8 @@ const EditModalComponent = ({modalDataProp, setModalDataProp, renderAgentProp, s
         * The repoCommitsChangeHandler which updates the project commits in the modalDataProp variable.
         * The repoHasLicenseChangeHandler which updates the project license availability in the modalDataProp variable
         * The repoHasReadmeChangeHandler which updates the project read me availability in the modalDataProp variable
-        * The saveChangesBtnHandler function which has an object with similar keys to those of the API to store the respective values which are taken by axios that updates the API with the new project details.
-    * The axios function has a try catch block that returns necessary responses in either case of a successful or failed update to the API.
+        * The saveChangesBtnHandler function which has an object whose value is received from the objectCreator module.
+    * The axios function has a try catch block that returns necessary responses in either case of a successful or failed update to the API using the axiosResponseMessage and axiosErrorMessage modules.
     * After 250 ms the boolean value of the setRenderAgentProp state variable is changed causing a fetch from the API that updates the projects data in the whole application.
   */
 
