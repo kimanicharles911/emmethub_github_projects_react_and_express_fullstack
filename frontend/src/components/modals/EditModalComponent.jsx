@@ -134,9 +134,9 @@ const EditModalComponent = ({modalDataProp, setModalDataProp, renderAgentProp, s
     })
   };
 
-  const saveChangesBtnHandler = () => {
+  const saveChangesBtnHandler = async() => {
     const newObject = objectCreator.moduleFunc(modalDataProp);
-    axios.put(`/api/repository?id=${modalDataProp.repoId}`, newObject)
+    await axios.put(`/api/repository?id=${modalDataProp.repoId}`, newObject)
       .then(res => {
         axiosResponseMessage.moduleFunc(res);
       }).catch(err => {

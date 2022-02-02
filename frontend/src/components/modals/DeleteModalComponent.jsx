@@ -7,8 +7,8 @@ import {axiosErrorMessage, axiosResponseMessage} from '../../modules';
 
 const DeleteModalComponent = ({modalDataProp, renderAgentProp, setRenderAgentProp}) => {
 
-  const deleteProjectBtnHandler = () => {
-    axios.delete(`/api/repository?id=${modalDataProp.repoId}`)
+  const deleteProjectBtnHandler = async() => {
+    await axios.delete(`/api/repository?id=${modalDataProp.repoId}`)
       .then(res => {
         axiosResponseMessage.moduleFunc(res);
       }).catch(err => {

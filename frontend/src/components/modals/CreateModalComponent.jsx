@@ -145,9 +145,9 @@ const CreateModalComponent = ({renderAgentProp, setRenderAgentProp}) => {
     })
   };
 
-  const createProjectBtnHandler = () => {
+  const createProjectBtnHandler = async() => {
     const newObject = objectCreator.moduleFunc(field);
-    axios.post('/api/repositories/new', newObject)
+    await axios.post('/api/repositories/new', newObject)
       .then(res => {
         axiosResponseMessage.moduleFunc(res);
       }).catch(err => {
