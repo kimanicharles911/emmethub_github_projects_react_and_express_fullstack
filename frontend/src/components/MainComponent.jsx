@@ -30,7 +30,7 @@ const MainComponent = ({renderAgentProp, setRenderAgentProp}) => {
     (async () => {
       let dataArr;
       try{
-        const response = await fetch('/api');
+        const response = await fetch('https://emmethubgithubprojects.cyclic.app/api');
         dataArr = await response.json();
       }catch(errors){
         console.error(errors);

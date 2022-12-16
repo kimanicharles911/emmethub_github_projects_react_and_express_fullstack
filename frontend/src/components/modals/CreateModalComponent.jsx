@@ -147,7 +147,7 @@ const CreateModalComponent = ({renderAgentProp, setRenderAgentProp}) => {
 
   const createProjectBtnHandler = async() => {
     const newObject = objectCreator.moduleFunc(field);
-    await axios.post('/api/repositories/new', newObject)
+    await axios.post('https://emmethubgithubprojects.cyclic.app/api/repositories/new', newObject)
       .then(res => {
         axiosResponseMessage.moduleFunc(res);
       }).catch(err => {
