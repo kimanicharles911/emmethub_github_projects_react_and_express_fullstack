@@ -8,7 +8,7 @@ import {axiosErrorMessage, axiosResponseMessage} from '../../modules';
 const DeleteModalComponent = ({modalDataProp, renderAgentProp, setRenderAgentProp}) => {
 
   const deleteProjectBtnHandler = async() => {
-    await axios.delete(`https://emmethubgithubprojects.cyclic.app/api/repository?id=${modalDataProp.repoId}`)
+    await axios.delete(`https://emmethubgithubprojectsapi.cyclic.app/api/repository?id=${modalDataProp.repoId}`)
       .then(res => {
         axiosResponseMessage.moduleFunc(res);
       }).catch(err => {

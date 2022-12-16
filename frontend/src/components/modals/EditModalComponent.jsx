@@ -136,7 +136,7 @@ const EditModalComponent = ({modalDataProp, setModalDataProp, renderAgentProp, s
 
   const saveChangesBtnHandler = async() => {
     const newObject = objectCreator.moduleFunc(modalDataProp);
-    await axios.put(`https://emmethubgithubprojects.cyclic.app/api/repository?id=${modalDataProp.repoId}`, newObject)
+    await axios.put(`https://emmethubgithubprojectsapi.cyclic.app/api/repository?id=${modalDataProp.repoId}`, newObject)
       .then(res => {
         axiosResponseMessage.moduleFunc(res);
       }).catch(err => {
