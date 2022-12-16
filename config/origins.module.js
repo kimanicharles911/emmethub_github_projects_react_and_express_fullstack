@@ -10,4 +10,4 @@ const origins = [
   'https://guileless-tapioca-fb3ffb.netlify.app',
 ];
 
-export default origins;
+module.exports = { origins };
