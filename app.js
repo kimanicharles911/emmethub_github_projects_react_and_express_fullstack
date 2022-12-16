@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
-import cors from 'cors';
-import corsOptions from './config/corsOptions.module.js';
+const cors = require('cors');
+const corsOptions = require('./config/corsOptions.module.js');
 app.use(cors(corsOptions));
 const port = require('./config');
 app.use(express.json());
